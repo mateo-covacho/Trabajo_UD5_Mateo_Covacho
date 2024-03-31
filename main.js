@@ -15,8 +15,7 @@ const questions = [
     { question: "¿Qué célula del cuerpo humano contiene la información genética?", answers: ["Célula epitelial", "Glóbulo rojo", "Neurona", "Célula germinal"], correctAnswer: "Célula germinal" },
     { question: "¿Qué fenómeno natural es causado por los movimientos de las placas tectónicas?", answers: ["Tsunami", "Tornado", "Erupción volcánica", "Terremoto"], correctAnswer: "Terremoto" }
 ];
-let currentQuestionIndex = 0;
-let score = 0;
+
 
 // Variables para llevar el índice de la pregunta actual y la puntuación del usuario
 let currentQuestionIndex = 0;
