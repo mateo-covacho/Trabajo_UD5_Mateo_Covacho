@@ -21,19 +21,15 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Función para mostrar la pregunta actual y sus opciones de respuesta
+// Mostrar la pregunta actual y sus opciones de respuesta
 function showQuestion() {
-    // Obtiene los elementos del DOM para mostrar la pregunta y las opciones de respuesta
     const questionArea = document.getElementById('question-area');
     const answerButtons = document.getElementById('answer-buttons');
 	
-    // Limpia las respuestas anteriores
     answerButtons.innerHTML = ''; 
     
-    // Establece el texto de la pregunta actual
     questionArea.textContent = questions[currentQuestionIndex].question;
 	
-    // Crea un botón para cada respuesta y lo añade al DOM
     questions[currentQuestionIndex].answers.forEach(answer => {
         const button = document.createElement('button');
         button.textContent = answer;
@@ -44,7 +40,7 @@ function showQuestion() {
     updateScore(); // Actualiza la puntuación visualmente
 }
 
-// Función para comprobar si la respuesta seleccionada es correcta
+// aomprobar si la respuesta seleccionada es correcta
 function checkAnswer(selectedAnswer) {
     if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
         score++; // Incrementa la puntuación si la respuesta es correcta
@@ -58,7 +54,7 @@ function checkAnswer(selectedAnswer) {
     updateScore(); // Actualiza la puntuación visualmente
 }
 
-// Función para mostrar los resultados finales
+// aostrar los resultados finales
 function showResults() {
     const questionArea = document.getElementById('question-area');
     const answerButtons = document.getElementById('answer-buttons');
@@ -70,13 +66,13 @@ function showResults() {
     nextButton.style.display = 'none';
 }
 
-// Función para actualizar el progreso de las preguntas
+// actualizar el progreso de las preguntas
 function updateProgress() {
     const progress = document.getElementById('progress');
     progress.textContent = `Pregunta ${currentQuestionIndex + 1} de ${questions.length}`;
 }
 
-// Función para actualizar la puntuación visualmente
+// actualizar la puntuación visualmente
 function updateScore() {
     const scoreDisplay = document.getElementById('score');
     scoreDisplay.textContent = `Puntuación: ${score}`;
@@ -86,7 +82,6 @@ function updateScore() {
 window.onload = function() {
     showQuestion(); // Muestra la primera pregunta
     updateProgress(); // Actualiza el progreso inicial
-    // Establece la funcionalidad del botón siguiente para pasar a la próxima pregunta o mostrar resultados
     document.getElementById('next-btn').onclick = () => {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
